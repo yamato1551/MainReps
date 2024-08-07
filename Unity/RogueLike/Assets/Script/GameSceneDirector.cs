@@ -20,6 +20,7 @@ public class GameSceneDirector : MonoBehaviour
     public Vector2 CamSideStart = new Vector2(float.MaxValue, float.MaxValue);
     public Vector2 CamSideEnd = new Vector2(float.MinValue, float.MinValue);
 
+    public PlayerController Player;
 
     // Start is called before the first frame update
     void Start()
