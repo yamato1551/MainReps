@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName ="CharacterSettings", menuName ="ScriptableObject/CharacterSetting")]
+[CreateAssetMenu(fileName = "CharacterSettings", menuName = "ScriptableObject/CharacterSettings")]
 public class CharacterSettings : ScriptableObject
 {
     // キャラクターデータ
@@ -21,9 +22,25 @@ public class CharacterSettings : ScriptableObject
             return instance;
         }
     }
+    // リストのIDからデータを検索する
     public CharacterStats Get(int id)
     {
         return (CharacterStats)datas.Find(item => item.Id == id).GetCopy();
+    }
+
+    // 敵生成
+    public EnemyController CreateEnemy(int id, GameSceneDirector sceneDirector, Vector3 position)
+    {
+        // ステータス取得
+        CharacterStats stats = Instance.Get(id);
+        // オブジェクト
+        GameObject obj = Instantiate(stats.Prefab, position, Quaternion.identity);
+
+        // データセット
+        EnemyController ctrl = obj.GetComponent<EnemyController>();
+        ctrl.Init(sceneDirector, stats);
+
+        return ctrl;
     }
 }
 
@@ -35,6 +52,7 @@ public enum MoveType
     TagetDirecion
 }
 
+[Serializable]
 public class CharacterStats : BaseStats
 {
     // キャラクターのプレハブ

@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public CharacterStats Stats;
 
-    GameSceneDirector sceneDirector;
+    [SerializeField]GameSceneDirector sceneDirector;
     Rigidbody2D rigidbody2d;
 
     // 攻撃のクールダウン
@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Init(this.sceneDirector, CharacterSettings.Instance.Get(100));
     }
 
     // Update is called once per frame
@@ -69,5 +69,108 @@ public class EnemyController : MonoBehaviour
         Vector2 dir = player.transform.position - transform.position;
         forword = dir;
         state = State.Alive;
+    }
+    
+    // プレイヤーを追いかける
+    void moveEnemy()
+    {
+        if (State.Alive != state) return;
+
+        // 目的がプレイヤーなら進む方方向を更新する
+        if (MoveType.TargetPlayer == Stats.MoveType)
+        {
+            PlayerController player = sceneDirector.Player;
+            Vector2 dir = player.transform.position - transform.position;
+            forword = dir;
+        }
+
+        // 移動
+        rigidbody2d.position += forword.normalized * Stats.MoveSpeed * Time.deltaTime;
+
+    }
+
+    // 各種タイマー
+    void updateTimer()
+    {
+        if (0 < attackCoolDownTimer)
+        {
+            attackCoolDownTimer -= Time.deltaTime;
+        }
+
+        // 生存時間が設定されていたらタイマー消化
+        if(0 < Stats.AliveTime)
+        {
+            Stats.AliveTime -= Time.deltaTime;
+            if (0 > Stats.AliveTime) setDead(false);
+        }
+    }
+
+    void setDead(bool createXP = true)
+    {
+        if (State.Alive != state) return;
+        // 物理挙動を停止
+        rigidbody2d.simulated = false;
+        // アニメーションの停止
+        transform.DOKill();
+        // 縦に潰れるアニメーション
+        transform.DOScaleY(0, 0.5f).OnComplete(() => Destroy(gameObject));
+
+        // 経験値作成
+        if (createXP)
+        {
+            // TODO 経験値生成
+        }
+        state = State.Dead;
+    }
+    // 衝突したとき
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        attackPlayer(collision);
+    }
+
+    // 衝突している間
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        attackPlayer(collision);
+    }
+
+    // 衝突が終わった時
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        
+    }
+
+    // プレイヤーへ攻撃する
+    void attackPlayer(Collision2D collision)
+    {
+        // プレイヤー以外
+        if (!collision.gameObject.TryGetComponent<PlayerController>(out var player)) return;
+        // 非アクティブ
+        if (State.Alive != state) return;
+
+        player.Damage(Stats.Attack);
+        attackCoolDownTimer = attackCoolDownTimeMax;
+    }
+
+    public float Damage(float attack)
+    {
+        // 非アクティブ
+        if (State.Alive != state) return 0;
+
+        // ダメージ計算
+        float damage = Mathf.Max(0, attack - Stats.Defence);
+        Stats.HP -= damage;
+
+        // ダメージ表示
+        sceneDirector.DispDamege(gameObject, damage);
+
+        // TODO 消滅
+        if (0 > Stats.HP)
+        {
+            setDead();
+        }
+
+        // 計算後のダメージを返す
+        return damage;
     }
 }

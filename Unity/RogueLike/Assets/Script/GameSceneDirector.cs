@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GameSceneDirector : MonoBehaviour
 {
@@ -22,9 +23,19 @@ public class GameSceneDirector : MonoBehaviour
 
     public PlayerController Player;
 
+    [SerializeField] Transform parentTextDamage;
+    [SerializeField] GameObject prefabTextDamage;
+
+    // タイマー
+    [SerializeField] Text textTimer;
+    public float GameTimer;
+    public float OldSeconds;
+
     // Start is called before the first frame update
     void Start()
     {
+        OldSeconds = -1;
+
         // カメラの移動できる範囲
         foreach (Transform item in grid.GetComponentInChildren<Transform>())
         {
@@ -85,7 +96,28 @@ public class GameSceneDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // ゲームタイマー更新
+        updateGameTimer();
+    }
+
+    // ゲームタイマー
+    void updateGameTimer()
+    {
+        GameTimer += Time.deltaTime;
+
+        // 前回と秒数が同じなら処理をしない
+        int seconds = (int)GameTimer % 60;
+        if (seconds == OldSeconds) return;
+
+        textTimer.text = Utils.GetTextTimer(seconds);
+        OldSeconds = seconds;
+    }
+
+    // ダメージ表示
+    public void DispDamege(GameObject target, float damage)
+    {
+        GameObject obj = Instantiate(prefabTextDamage, parentTextDamage);
+        obj.GetComponent<TextDamageController>().Init(target, damage);
     }
 
     /// <summary>
