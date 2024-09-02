@@ -90,12 +90,8 @@ public class GameSceneDirector : MonoBehaviour
 
         WorldStart = new Vector2(TileMapStart.x * 1.5f, TileMapStart.y * 1.5f);
         WorldEnd = new Vector2(TileMapEnd.x * 1.5f, TileMapEnd.y * 1.5f);
-        print("WorldStart : " + WorldStart);
-        print("WorldEnd : " + WorldEnd);
 
         camCorners();
-        print("camSideStart : " + CamSideStart);
-        print("camSideEnd : " + CamSideEnd);
     }
 
     // Update is called once per frame
@@ -113,8 +109,8 @@ public class GameSceneDirector : MonoBehaviour
         // ‘O‰ñ‚Æ•b”‚ª“¯‚¶‚È‚çˆ—‚ğ‚µ‚È‚¢
         int seconds = (int)GameTimer % 60;
         if (seconds == OldSeconds) return;
-
-        textTimer.text = Utils.GetTextTimer(seconds);
+        print("seconds:" + GameTimer);
+        textTimer.text = Utils.GetTextTimer(GameTimer);
         OldSeconds = seconds;
     }
 
