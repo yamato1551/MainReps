@@ -34,10 +34,18 @@ public class GameSceneDirector : MonoBehaviour
     // 敵生成
     [SerializeField] EnemySpawnerController enemySpawner;
 
+    // プレイヤー生成
+    [SerializeField] Slider sliderHP;
+    [SerializeField] Slider sliderXP;
+    [SerializeField] Text textLv;
 
     // Start is called before the first frame update
     void Start()
     {
+        // プレイヤー作成
+        int playerId = 0;
+        Player = CharacterSettings.Instance.CreatePlayer(playerId, this, enemySpawner, textLv, sliderHP, sliderXP);
+
         OldSeconds = -1;
         enemySpawner.Init(this, tilemapCollider);
 
@@ -109,7 +117,6 @@ public class GameSceneDirector : MonoBehaviour
         // 前回と秒数が同じなら処理をしない
         int seconds = (int)GameTimer % 60;
         if (seconds == OldSeconds) return;
-        print("seconds:" + GameTimer);
         textTimer.text = Utils.GetTextTimer(GameTimer);
         OldSeconds = seconds;
     }

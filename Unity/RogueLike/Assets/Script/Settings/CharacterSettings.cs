@@ -42,6 +42,21 @@ public class CharacterSettings : ScriptableObject
 
         return ctrl;
     }
+
+    // プレイヤー生成
+    public PlayerController CreatePlayer(int id, GameSceneDirector sceneDirector, EnemySpawnerController enemySpawner, Text textLv, Slider sliderHP, Slider sliderXP)
+    {
+        // ステータス取得
+        CharacterStats stats = Instance.Get(id);
+        // ゲームオブジェクト作成
+        GameObject obj = Instantiate(stats.Prefab, Vector3.zero, Quaternion.identity);
+
+        // データセット
+        PlayerController ctrl = obj.GetComponent<PlayerController>();
+        ctrl.Init(sceneDirector, enemySpawner, stats, textLv, sliderHP, sliderXP);
+
+        return ctrl;
+    }
 }
 
 public enum MoveType
