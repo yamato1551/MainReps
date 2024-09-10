@@ -386,6 +386,8 @@
 "Assets/Script/Settings/WepaponSpawnerSettings.cs"
 "Assets/Script/TextDamageController.cs"
 "Assets/Script/Utils.cs"
+"Assets/SlashController.cs"
+"Assets/SlashSpawnerController.cs"
 -langversion:9.0
 /deterministic
 /optimize+
