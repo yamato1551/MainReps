@@ -81,5 +81,15 @@ public class BaseWeaponSpawner : MonoBehaviour
             item.GetComponent<Rigidbody2D>().simulated = enabled;
         }
     }
+
+    // タイマー消化チェック
+    protected bool isSpawnTimerNotElapsed()
+    {
+        // タイマー消化
+        spawnTimer -= Time.deltaTime;
+        if (0 < spawnTimer) return true;
+        return false;
+    }
+
     // TODO レベルアップ時のデータを返す
 }

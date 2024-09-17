@@ -386,8 +386,12 @@
 "Assets/Script/Settings/WepaponSpawnerSettings.cs"
 "Assets/Script/TextDamageController.cs"
 "Assets/Script/Utils.cs"
-"Assets/SlashController.cs"
-"Assets/SlashSpawnerController.cs"
+"Assets/Script/Weapon/ArrowController.cs"
+"Assets/Script/Weapon/ArrowSpawnerController.cs"
+"Assets/Script/Weapon/AxeController.cs"
+"Assets/Script/Weapon/AxeSpawnerController.cs"
+"Assets/Script/Weapon/SlashController.cs"
+"Assets/Script/Weapon/SlashSpawnerController.cs"
 -langversion:9.0
 /deterministic
 /optimize+
