@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     // 敵生成装置
     EnemySpawnerController enemySpawner;
     // 向き
-    public Vector2 Forword;
+    public Vector2 Forward;
     // レベルテキスト
     Text textLv;
     // 現在装備中の武器
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         // プレイヤーの向き
-        Forword = Vector2.right;
+        Forward = Vector2.right;
 
         // 経験値閾値リスト作成
         levelRequirements.Add(0);
@@ -173,6 +173,8 @@ public class PlayerController : MonoBehaviour
             pos.y = sceneDirector.WorldEnd.y;
             rigidbody2d.position = pos;
         }
+
+        Forward = dir;
     }
 
     /// <summary>

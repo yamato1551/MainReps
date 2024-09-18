@@ -15,7 +15,7 @@ public class ArrowController : BaseWeapon
 
         // 角度に変換する　tan⁻¹(y/x) * ラジアン角(57.29578)
         float angle = Mathf.Atan2 (forward.y, forward.x) * Mathf.Rad2Deg;
-        print("angle:" + angle);
+
         // 角度を代入
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }

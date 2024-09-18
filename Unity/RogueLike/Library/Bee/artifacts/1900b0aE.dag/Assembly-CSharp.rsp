@@ -390,6 +390,8 @@
 "Assets/Script/Weapon/ArrowSpawnerController.cs"
 "Assets/Script/Weapon/AxeController.cs"
 "Assets/Script/Weapon/AxeSpawnerController.cs"
+"Assets/Script/Weapon/KnifeController.cs"
+"Assets/Script/Weapon/KnifeSpawnerController.cs"
 "Assets/Script/Weapon/SlashController.cs"
 "Assets/Script/Weapon/SlashSpawnerController.cs"
 -langversion:9.0

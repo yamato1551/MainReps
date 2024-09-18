@@ -16,7 +16,7 @@ public class ArrowSpawnerController : BaseWeaponSpawner
         // “G‚ª‚¢‚È‚¢
         if (1 > enemySpawner.GetEnemies().Count) return;
 
-        for (int i = 0;i < (int)Stats.SpawnCount; i++)
+        for (int i = 0; i < (int)Stats.SpawnCount; i++)
         {
             // •Ší¶¬
             ArrowController ctrl = (ArrowController)createWeapon(transform.position);
