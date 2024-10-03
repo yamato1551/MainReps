@@ -87,9 +87,89 @@ MonoBehaviour:
     MoveSpeed: 10
     PickUpRange: 0
     AliveTime: 10
-    PrefabSpawner: {fileID: 6772760652669783601, guid: 6b44012c79f63f649ba985ed7949387b, type: 3}
+    PrefabSpawner: {fileID: 7889162728229078811, guid: 6b44012c79f63f649ba985ed7949387b, type: 3}
     Icon: {fileID: 1904217932, guid: fe9d176ce4b73467ab961a542a54e03d, type: 3}
     LevelUpItemId: 3
     SpawnCount: 3
     SpawnTimerMin: 3
     SpawnTimerMax: 3
+  - Title: "\u30D6\u30FC\u30E1\u30E9\u30F3\u30BD\u30FC\u30C9"
+    Id: 4
+    Lv: 1
+    Name: "\u30D6\u30FC\u30E1\u30E9\u30F3\u30BD\u30FC\u30C9"
+    Description: "\u56DE\u8EE2\u3057\u306A\u304C\u3089\u623B\u3063\u3066\u304F\u308B\u30BD\u30FC\u30C9"
+    Attack: 15
+    Defence: 0
+    HP: -1
+    MaxHP: 0
+    XP: 0
+    MaxXP: 0
+    MoveSpeed: 500
+    PickUpRange: 0
+    AliveTime: 10
+    PrefabSpawner: {fileID: 8113629924024525540, guid: 194de4d0a5808924391e879726efb6af, type: 3}
+    Icon: {fileID: 1436518502, guid: fe9d176ce4b73467ab961a542a54e03d, type: 3}
+    LevelUpItemId: 2
+    SpawnCount: 1
+    SpawnTimerMin: 2
+    SpawnTimerMax: 3
+  - Title: "\u30B7\u30FC\u30EB\u30C9"
+    Id: 5
+    Lv: 1
+    Name: "\u30B7\u30FC\u30EB\u30C9"
+    Description: "\u6575\u3092\u8DF3\u306D\u8FD4\u3059\u30B7\u30FC\u30EB\u30C9"
+    Attack: 5
+    Defence: 0
+    HP: 5
+    MaxHP: 0
+    XP: 0
+    MaxXP: 0
+    MoveSpeed: 20
+    PickUpRange: 0
+    AliveTime: -1
+    PrefabSpawner: {fileID: 1554814129419818822, guid: e5646cbda74f4d1428b4948067dddb5e, type: 3}
+    Icon: {fileID: -1350194950, guid: fe9d176ce4b73467ab961a542a54e03d, type: 3}
+    LevelUpItemId: 4
+    SpawnCount: 3
+    SpawnTimerMin: 10
+    SpawnTimerMax: 10
+  - Title: "\u624B\u88CF\u5263"
+    Id: 6
+    Lv: 1
+    Name: "\u624B\u88CF\u5263"
+    Description: "\u624B\u88CF\u5263\u3092\u6295\u3052\u308B"
+    Attack: 15
+    Defence: 0
+    HP: 5
+    MaxHP: 0
+    XP: 0
+    MaxXP: 0
+    MoveSpeed: 10
+    PickUpRange: 0
+    AliveTime: 10
+    PrefabSpawner: {fileID: 6709036763752186714, guid: 45925d42f3f0c41498e73070133309fd, type: 3}
+    Icon: {fileID: -1613146498, guid: fe9d176ce4b73467ab961a542a54e03d, type: 3}
+    LevelUpItemId: 4
+    SpawnCount: 4
+    SpawnTimerMin: 0.5
+    SpawnTimerMax: 2
+  - Title: "\u5186\u6708\u8F2A"
+    Id: 7
+    Lv: 1
+    Name: "\u5186\u6708\u8F2A"
+    Description: "\u753B\u9762\u6A4B\u3067\u8DF3\u306D\u8FD4\u308B\u5186\u578B\u306E\u624B\u88CF\u5263"
+    Attack: 10
+    Defence: 0
+    HP: -1
+    MaxHP: 0
+    XP: 0
+    MaxXP: 0
+    MoveSpeed: 8
+    PickUpRange: 0
+    AliveTime: -1
+    PrefabSpawner: {fileID: 3645650237518612016, guid: 4a7df5c1b571add4e974f3751797390b, type: 3}
+    Icon: {fileID: -1544178710, guid: fe9d176ce4b73467ab961a542a54e03d, type: 3}
+    LevelUpItemId: 4
+    SpawnCount: 1
+    SpawnTimerMin: 5
+    SpawnTimerMax: 5

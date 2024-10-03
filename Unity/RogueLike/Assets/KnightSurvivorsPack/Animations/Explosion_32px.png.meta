@@ -3,7 +3,7 @@ guid: e70beded2ee9c4f9581df4f189bc26e4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -346,20 +351,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Explosion_32px_6: -136013262
-      Explosion_32px_4: -124216611
-      Explosion_32px_7: 1358210093
-      Explosion_32px_5: 2075029650
-      Explosion_32px_10: -63168429
-      Explosion_32px_1: -1051855173
-      Explosion_32px_9: 1309424395
-      Explosion_32px_3: 610690696
-      Explosion_32px_8: 470137797
-      Explosion_32px_2: -506184007
       Explosion_32px_0: -848701462
-  spritePackingTag: 
+      Explosion_32px_1: -1051855173
+      Explosion_32px_10: -63168429
+      Explosion_32px_2: -506184007
+      Explosion_32px_3: 610690696
+      Explosion_32px_4: -124216611
+      Explosion_32px_5: 2075029650
+      Explosion_32px_6: -136013262
+      Explosion_32px_7: 1358210093
+      Explosion_32px_8: 470137797
+      Explosion_32px_9: 1309424395
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
