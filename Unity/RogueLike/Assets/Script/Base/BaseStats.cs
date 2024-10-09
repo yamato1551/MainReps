@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -27,7 +28,7 @@ public enum StatsType
     SpawnTimerMax,
 }
 
-[SerializeField]
+[Serializable]
 public class BonusStats
 {
     // í«â¡É^ÉCÉv

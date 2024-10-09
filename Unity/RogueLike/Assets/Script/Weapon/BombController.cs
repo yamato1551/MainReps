@@ -80,5 +80,40 @@ public class BombController : BaseWeapon
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // 敵以外
+        if (!collision.gameObject.TryGetComponent<EnemyController>(out var enemy)) return;
+        
+        // 爆弾
+        if (State.Bomb == state)
+        {
+            attackEnemy(collision);
+            changeState(State.Explosion);
+        }
+        // 爆発中
+        else if (State.Explosion == state)
+        {
+            attackEnemy(collision);
+        }
+    }
+
+    // 衝突している間
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        // ダメージフロアじゃない
+        if (State.DamegeFloor != state) return;
+        // 敵以外
+        if (!collision.gameObject.TryGetComponent<EnemyController>(out var enemy)) return;
+        
+        // ターゲットのタイマーをセット
+        damageFloorTimer.TryAdd(enemy, damageFloorCoolDownTimer);
+        // 敵毎にタイマーを消化
+        damageFloorTimer[enemy] -= Time.deltaTime;
+
+        // 一定時間でダメージ
+        if (0 > damageFloorTimer[enemy])
+        {
+            attackEnemy(collision, stats.Attack / 3);
+            damageFloorTimer[enemy] = damageFloorCoolDownTimer;
+        }
     }
 }

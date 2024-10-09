@@ -173,3 +173,23 @@ MonoBehaviour:
     SpawnCount: 1
     SpawnTimerMin: 5
     SpawnTimerMax: 5
+  - Title: "\u30DC\u30E0"
+    Id: 8
+    Lv: 1
+    Name: "\u30DC\u30E0"
+    Description: "\u7206\u5F3E\u306E\u96E8\u3092\u3075\u3089\u305B\u3066\u5E8A\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B"
+    Attack: 50
+    Defence: 0
+    HP: -1
+    MaxHP: 0
+    XP: 0
+    MaxXP: 0
+    MoveSpeed: 10
+    PickUpRange: 0
+    AliveTime: -1
+    PrefabSpawner: {fileID: 443221858582184979, guid: 530de39f9aa980349942d5ccd1f415aa, type: 3}
+    Icon: {fileID: -1737548618, guid: fe9d176ce4b73467ab961a542a54e03d, type: 3}
+    LevelUpItemId: 4
+    SpawnCount: 1
+    SpawnTimerMin: 5
+    SpawnTimerMax: 5
