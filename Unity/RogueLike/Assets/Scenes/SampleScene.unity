@@ -425,6 +425,7 @@ GameObject:
   - component: {fileID: 102195201}
   - component: {fileID: 102195203}
   - component: {fileID: 102195202}
+  - component: {fileID: 102195204}
   m_Layer: 0
   m_Name: TilemapField
   m_TagString: Untagged
@@ -2390,6 +2391,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &102195204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102195200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3440076cae189c7468be6137b4ee8ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &124748710
 GameObject:
   m_ObjectHideFlags: 0
@@ -11423,6 +11436,10 @@ MonoBehaviour:
   sliderHP: {fileID: 57145144}
   sliderXP: {fileID: 1265234325}
   textLv: {fileID: 623389586}
+  prefabXP:
+  - {fileID: 5355833487351453430, guid: 0aeb81f72dcd38b4c9fc38de1ffcc995, type: 3}
+  - {fileID: 8115357532549381273, guid: 981e506a5b2e5264fb828ddd2de2200a, type: 3}
+  - {fileID: 766215099804870228, guid: a48faee61988f104db29d5cd5aa4bc9e, type: 3}
 --- !u!4 &1205377887
 Transform:
   m_ObjectHideFlags: 0
@@ -11432,7 +11449,7 @@ Transform:
   m_GameObject: {fileID: 1205377885}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09770405, y: 0.4072211, z: 0.005517848}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16966,7 +16983,7 @@ Transform:
   m_GameObject: {fileID: 1651997675}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -56.622517, y: -24.26543, z: 42.428055}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

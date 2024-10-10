@@ -39,6 +39,9 @@ public class GameSceneDirector : MonoBehaviour
     [SerializeField] Slider sliderXP;
     [SerializeField] Text textLv;
 
+    // 経験値
+    [SerializeField] List<GameObject> prefabXP;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -138,41 +141,41 @@ public class GameSceneDirector : MonoBehaviour
 
         // カメラの遠クリップ平面までの距離
         float farClipPlane = Camera.main.farClipPlane;
-        
+
         // カメラの視野角
         float fieldOfView = Camera.main.fieldOfView;
-        
+
         // カメラのアスペクト比
         float aspect = Camera.main.aspect;
-        
+
         // 近クリップ平面のコーナーポイントを格納するための配列
         Vector3[] nearCorners = new Vector3[4];
-        
+
         // 遠クリップ平面のコーナーポイントを格納するための入れる
         Vector3[] farCorners = new Vector3[4];
-        
+
         // カメラの近クリップ平面のコーナーポイント計算
         Camera.main.CalculateFrustumCorners(new Rect(0, 0, 1, 1), nearClipPlane, Camera.MonoOrStereoscopicEye.Mono, nearCorners);
-        
+
         // カメラの遠クリップ平面のコーナーポイントを計算
         Camera.main.CalculateFrustumCorners(new Rect(0, 0, 1, 1), farClipPlane, Camera.MonoOrStereoscopicEye.Mono, farCorners);
-        
+
         /*print("nearCorners : " + nearCorners);
           print("farCorners : " + farCorners);*/
-        
+
         // カメラの位置を取得
         Vector3 cameraPos = Camera.main.transform.position;
-        
+
         // ワールド座標系での視錐台のコーナーポイントを計算
         for (int i = 0; i < 4; i++)
         {
             nearCorners[i] = Camera.main.transform.TransformPoint(nearCorners[i]);
             farCorners[i] = Camera.main.transform.TransformPoint(farCorners[i]);
         }
-        
+
         /*print("nearCorners : " + nearCorners);
           print("farCorners : " + farCorners);*/
-        
+
         foreach (Vector3 corner in farCorners)
         {
             // 開始位置
@@ -194,5 +197,29 @@ public class GameSceneDirector : MonoBehaviour
                 CamSideEnd.y = corner.y;
             }
         }
+    }
+
+    // 経験値取得
+    public void CreateXP(EnemyController enemy)
+    {
+        float xp = Random.Range(enemy.Stats.XP, enemy.Stats.MaxXP);
+        if (0 > xp) return;
+
+        // 5未満
+        GameObject prefab = prefabXP[0];
+        // 10以上
+        if (10 <= xp)
+        {
+            prefab = prefabXP[2];
+        }
+        // 5以上
+        else if (5 <= xp)
+        {
+            prefab = prefabXP[1];
+        }
+        //　初期化
+        GameObject obj = Instantiate(prefab, enemy.transform.position, Quaternion.identity);
+        XPController ctrl = obj.GetComponent<XPController>();
+        ctrl.Init(this, xp);
     }
 }
