@@ -405,7 +405,7 @@
 "Assets/Script/Weapon/ShurikenSpawnerController.cs"
 "Assets/Script/Weapon/SlashController.cs"
 "Assets/Script/Weapon/SlashSpawnerController.cs"
-"Assets/XPController.cs"
+"Assets/Script/XPController.cs"
 -langversion:9.0
 /deterministic
 /optimize+

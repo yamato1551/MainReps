@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,6 +46,9 @@ public class GameSceneDirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // DOTweenのキャパシティ確保
+        DOTween.SetTweensCapacity(1000, 100);
+
         // プレイヤー作成
         int playerId = 0;
         Player = CharacterSettings.Instance.CreatePlayer(playerId, this, enemySpawner, textLv, sliderHP, sliderXP);

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,7 +74,7 @@ public class BaseWeaponSpawner : MonoBehaviour
         this.enabled = enabled;
         // オブジェクトを削除 保存している武器の中で利用しなくなった武器をリストから削除する処理
         weapons.RemoveAll(item => !item);
-        // 生成下武器を停止
+        // 生成した武器を停止
         foreach (var item in weapons)
         {
             item.enabled = enabled;
@@ -91,5 +92,54 @@ public class BaseWeaponSpawner : MonoBehaviour
         return false;
     }
 
-    // TODO レベルアップ時のデータを返す
+    // レベルアップ時のデータを返す
+    public WeaponSpawnerStats GetLevelUpStats(bool isNextLevel = false)
+    {
+        // 次のレベル
+        int nextLv = Stats.Lv + 1;
+
+        // 次のレベルがあるかどうか調べて、あれば上書き
+        WeaponSpawnerStats ret = WeaponSpawnerSettings.Instance.Get(Stats.Id, nextLv);
+
+        // 上書きデータあり
+        if (Stats.Lv < ret.Lv)
+        {
+
+        }
+        else
+        {
+            // 説明をアイテムのものに置き換える
+            ItemData itemData = ItemSettings.Instance.Get(Stats.LevelUpItemId);
+            ret.Description = itemData.Description;
+        }
+
+        // レベルを1上げて返すかどうか
+        if (isNextLevel)
+        {
+            ret.Lv = nextLv;
+        }
+        return ret;
+    }
+    //　レベルアップ
+    public void LevelUp()
+    {
+        // 現在のレベル
+        int lv = Stats.Lv;
+
+        // 次のレベルのデータ
+        WeaponSpawnerStats nextData = GetLevelUpStats();
+
+        // 現在のレベルと違えば上書き
+        if (Stats.Lv < nextData.Lv)
+        {
+            Stats = nextData;
+        }
+        else
+        {
+            // 説明をアイテムのものに置き換える
+            ItemData itemData = ItemSettings.Instance.Get(Stats.LevelUpItemId);
+            Stats.AddItemData(itemData);
+        }
+        Stats.Lv = lv + 1;
+    }
 }
