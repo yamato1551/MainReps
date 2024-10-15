@@ -34,21 +34,19 @@ public class WeaponSpawnerSettings : ScriptableObject
             if (lv == item.Lv)
             {
                 return (WeaponSpawnerStats)item.GetCopy();
-            } 
+            }
+            // 仮のデータがセットされていないか、それを超えるレベルが合ったら入れ換える
+            else if(null == ret)
+            {
+                ret = item;
+            }
             //　探しているレベル寄り下で、暫定データ寄り大きい
             else if (item.Lv<lv && ret.Lv < item.Lv)
             {
                 ret = item;
             }
-
-            // 仮のデータがセットされていないか、それを超えるレベルが合ったら入れ換える
-            if (null == ret)
-            {
-                ret = item;
-            }
-
         }
-        return (WeaponSpawnerStats)datas.Find(item => item.Id == id).GetCopy();
+        return (WeaponSpawnerStats)ret.GetCopy();
     }
 
     // 作成

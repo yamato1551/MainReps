@@ -228,11 +228,11 @@ public class PlayerController : MonoBehaviour
         // 非アクティブなら抜ける
         if (!enabled) return;
 
-        float damage = Mathf.Max(0, attack - Stats.Defence);
+        float damage = Mathf.Max(0, attack - Stats.Defense);
         Stats.HP -= damage;
 
         // ダメージ表示
-        sceneDirector.DispDamege(gameObject, damage);
+        sceneDirector.DispDamage(gameObject, damage);
 
         // TODO ゲームオーバー
         if (0 > Stats.HP)
@@ -343,9 +343,11 @@ public class PlayerController : MonoBehaviour
             if (Stats.Lv < levelRequirements.Count)
             {
                 Stats.XP = 0;
-                Stats.MaxHP = levelRequirements[Stats.Lv];
+                Stats.MaxXP = levelRequirements[Stats.Lv];
             }
-            // TODO レベルアップパネル表示
+            // レベルアップパネル表示
+            sceneDirector.DispPanelLevelUp();
+
             setTextLv();
         }
         // 表示更新
@@ -427,7 +429,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // レベルアップやアイテム取得時
-    public void AddBounsData(BonusData bonusData)
+    public void AddBonusData(BonusData bonusData)
     {
         if (null == bonusData) return;
 

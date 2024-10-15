@@ -19,7 +19,7 @@ MonoBehaviour:
     Name: "\u30CA\u30A4\u30C8"
     Description: "\t\t\t"
     Attack: 5
-    Defence: 1
+    Defense: 0
     HP: 100
     MaxHP: 100
     XP: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
     PickUpRange: 0
     AliveTime: 0
     Prefab: {fileID: 4183224320379609652, guid: fd78a3bfeca92034c94a8e4354c6d4ab, type: 3}
-    DefaultWeaponIds: 08000000
+    DefaultWeaponIds: 000000000100000002000000030000000400000005000000060000000700000008000000
     UsableWeaponIds: 000000000100000002000000030000000400000005000000060000000700000008000000
     UsableWeaponMax: 6
     MoveType: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     Name: "\u30B3\u30A6\u30E2\u30EA"
     Description: 
     Attack: 5
-    Defence: 0
+    Defense: 0
     HP: 10
     MaxHP: 10
     XP: 0.1
@@ -57,7 +57,7 @@ MonoBehaviour:
     Name: "\u30B9\u30E9\u30A4\u30E0"
     Description: 
     Attack: 10
-    Defence: 0
+    Defense: 0
     HP: 29
     MaxHP: 0
     XP: 0.5
@@ -76,7 +76,7 @@ MonoBehaviour:
     Name: "\u30B4\u30D6\u30EA\u30F3"
     Description: 
     Attack: 15
-    Defence: 0
+    Defense: 0
     HP: 50
     MaxHP: 0
     XP: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
     Name: "\u30BE\u30F3\u30D3"
     Description: 
     Attack: 15
-    Defence: 0
+    Defense: 0
     HP: 60
     MaxHP: 0
     XP: 1.5
@@ -114,7 +114,7 @@ MonoBehaviour:
     Name: "\u30B9\u30B1\u30EB\u30C8\u30F3"
     Description: 
     Attack: 18
-    Defence: 0
+    Defense: 0
     HP: 80
     MaxHP: 0
     XP: 2
@@ -133,7 +133,7 @@ MonoBehaviour:
     Name: "\u30F4\u30A1\u30F3\u30D1\u30A4\u30A2"
     Description: 
     Attack: 20
-    Defence: 0
+    Defense: 0
     HP: 100
     MaxHP: 0
     XP: 3
@@ -152,7 +152,7 @@ MonoBehaviour:
     Name: "\u5927\u7FA4\u30B3\u30A6\u30E2\u30EA"
     Description: 
     Attack: 15
-    Defence: 0
+    Defense: 0
     HP: 3
     MaxHP: 0
     XP: 0.1
@@ -171,7 +171,7 @@ MonoBehaviour:
     Name: "\u5927\u7FA4\u30B9\u30E9\u30A4\u30E0"
     Description: 
     Attack: 50
-    Defence: 0
+    Defense: 0
     HP: 500
     MaxHP: 0
     XP: 5
@@ -190,7 +190,7 @@ MonoBehaviour:
     Name: "\u30DC\u30B9"
     Description: 
     Attack: 50
-    Defence: 0
+    Defense: 0
     HP: 5000
     MaxHP: 0
     XP: 20

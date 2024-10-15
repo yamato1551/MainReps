@@ -381,6 +381,7 @@
 "Assets/Script/EnemyController.cs"
 "Assets/Script/EnemySpawnerController.cs"
 "Assets/Script/GameSceneDirector.cs"
+"Assets/Script/PanelLevelUpController.cs"
 "Assets/Script/PlayerController.cs"
 "Assets/Script/Settings/CharacterSettings.cs"
 "Assets/Script/Settings/ItemSettings.cs"

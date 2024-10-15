@@ -12,9 +12,9 @@ public class EnemyController : MonoBehaviour
 
     // 攻撃のクールダウン
     float attackCoolDownTimer;
-    float attackCoolDownTimeMax = 0.5f;
+    float attackCoolDownTimerMax = 0.5f;
     // 向き
-    Vector2 forword;
+    Vector2 forward;
 
     // 状態
     enum State
@@ -60,7 +60,7 @@ public class EnemyController : MonoBehaviour
         float z = Random.Range(-addz, addz) * random;
         // 初期値
         Vector3 rotation = transform.rotation.eulerAngles;
-        rotation.x = z;
+        rotation.z = z;
         // 目標値
         transform.eulerAngles = rotation;
         transform.DORotate(new Vector3(0, 0, -z), speed).SetLoops(-1, LoopType.Yoyo);
@@ -68,7 +68,7 @@ public class EnemyController : MonoBehaviour
         // 進む方向
         PlayerController player = sceneDirector.Player;
         Vector2 dir = player.transform.position - transform.position;
-        forword = dir;
+        forward = dir;
         state = State.Alive;
     }
     
@@ -82,11 +82,11 @@ public class EnemyController : MonoBehaviour
         {
             PlayerController player = sceneDirector.Player;
             Vector2 dir = player.transform.position - transform.position;
-            forword = dir;
+            forward = dir;
         }
 
         // 移動
-        rigidbody2d.position += forword.normalized * Stats.MoveSpeed * Time.deltaTime;
+        rigidbody2d.position += forward.normalized * Stats.MoveSpeed * Time.deltaTime;
 
     }
 
@@ -147,11 +147,13 @@ public class EnemyController : MonoBehaviour
     {
         // プレイヤー以外
         if (!collision.gameObject.TryGetComponent<PlayerController>(out var player)) return;
+        // タイマー未消化
+        if (0 < attackCoolDownTimer) return;
         // 非アクティブ
         if (State.Alive != state) return;
 
         player.Damage(Stats.Attack);
-        attackCoolDownTimer = attackCoolDownTimeMax;
+        attackCoolDownTimer = attackCoolDownTimerMax;
     }
 
     public float Damage(float attack)
@@ -160,11 +162,11 @@ public class EnemyController : MonoBehaviour
         if (State.Alive != state) return 0;
 
         // ダメージ計算
-        float damage = Mathf.Max(0, attack - Stats.Defence);
+        float damage = Mathf.Max(0, attack - Stats.Defense);
         Stats.HP -= damage;
 
         // ダメージ表示
-        sceneDirector.DispDamege(gameObject, damage);
+        sceneDirector.DispDamage(gameObject, damage);
 
         // TODO 消滅
         if (0 > Stats.HP)

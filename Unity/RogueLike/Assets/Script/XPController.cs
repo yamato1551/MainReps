@@ -33,7 +33,7 @@ public class XPController : MonoBehaviour
         // タイマー消化で消え始める
         aliveTimer -= Time.deltaTime;
 
-        if (0 < fadeTime) { 
+        if (0 > aliveTimer) { 
             // アルファ値を設定
             Color color = spriteRenderer.color;
             color.a -= 1.0f / fadeTime * Time.deltaTime;

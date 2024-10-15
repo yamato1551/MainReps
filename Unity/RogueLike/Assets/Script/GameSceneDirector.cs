@@ -43,6 +43,9 @@ public class GameSceneDirector : MonoBehaviour
     // 経験値
     [SerializeField] List<GameObject> prefabXP;
 
+    // レベルアップパネル
+    [SerializeField] PanelLevelUpController panelLevelUp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,9 +56,10 @@ public class GameSceneDirector : MonoBehaviour
         int playerId = 0;
         Player = CharacterSettings.Instance.CreatePlayer(playerId, this, enemySpawner, textLv, sliderHP, sliderXP);
 
+        // 初期設定
         OldSeconds = -1;
         enemySpawner.Init(this, tilemapCollider);
-
+        panelLevelUp.Init(this);
         // カメラの移動できる範囲
         foreach (Transform item in grid.GetComponentInChildren<Transform>())
         {
@@ -129,7 +133,7 @@ public class GameSceneDirector : MonoBehaviour
     }
 
     // ダメージ表示
-    public void DispDamege(GameObject target, float damage)
+    public void DispDamage(GameObject target, float damage)
     {
         GameObject obj = Instantiate(prefabTextDamage, parentTextDamage);
         obj.GetComponent<TextDamageController>().Init(target, damage);
@@ -225,5 +229,69 @@ public class GameSceneDirector : MonoBehaviour
         GameObject obj = Instantiate(prefab, enemy.transform.position, Quaternion.identity);
         XPController ctrl = obj.GetComponent<XPController>();
         ctrl.Init(this, xp);
+    }
+
+    // ゲーム再開/停止
+    void setEnabled(bool enabled = true)
+    {
+        this.enabled = enabled;
+        Time.timeScale = (enabled) ? 1 : 0;
+        Player.SetEnabled(enabled);
+    }
+
+    // ゲーム再開
+    public void PlayGame(BonusData bonusData = null)
+    {
+        // アイテム追加
+        Player.AddBonusData(bonusData);
+        // TODO ステータス反映
+
+        //　ゲーム再開
+        setEnabled();
+    }
+
+    // レベルアップ時
+    public void DispPanelLevelUp()
+    {
+        // 追加したアイテム
+        List<WeaponSpawnerStats> items = new List<WeaponSpawnerStats>();
+
+        // 生成数
+        int randomCount = panelLevelUp.GetButtonCount();
+        // 武器の数が足りない場合は減らす
+        int listCount = Player.GetUsableWeaponIds().Count;
+
+        if (listCount < randomCount)
+        {
+            randomCount = listCount;
+        }
+
+        // ボーナスをランダムで生成
+        for (int i = 0; i < randomCount; i++)
+        {
+            // 装備可能武器からランダム
+            WeaponSpawnerStats randomItem = Player.GetRandomSpawnerStats();
+            // データ無し
+            if (null == randomItem) continue;
+
+            // かぶりチェック
+            WeaponSpawnerStats findItem = items.Find(item => item.Id == randomItem.Id);
+
+            // かぶり無し
+            if (null == findItem)
+            {
+                items.Add(randomItem);
+            }
+            else
+            // もう一回
+            {
+                i--;
+            }
+
+            // レベルアップパネル表示
+            panelLevelUp.DispPanel(items);
+            // ゲーム停止
+            setEnabled(false);
+        }
     }
 }

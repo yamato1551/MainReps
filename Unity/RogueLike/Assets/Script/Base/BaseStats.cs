@@ -55,7 +55,7 @@ public class BaseStats
     // UŒ‚—Í
     public float Attack;
     // –hŒä—Í
-    public float Defence;
+    public float Defense;
     // HP
     public float HP;
     //Å‘åHP
@@ -77,7 +77,7 @@ public class BaseStats
         get => key switch
         {
             StatsType.Attack => Attack,
-            StatsType.Defence => Defence,
+            StatsType.Defence => Defense,
             StatsType.MoveSpeed => MoveSpeed,
             StatsType.HP => HP,
             StatsType.MaxHP => MaxHP,
@@ -95,7 +95,7 @@ public class BaseStats
                     Attack = value;
                     break;
                 case StatsType.Defence:
-                    Defence = value;
+                    Defense = value;
                     break;
                 case StatsType.MoveSpeed:
                     MoveSpeed = value;

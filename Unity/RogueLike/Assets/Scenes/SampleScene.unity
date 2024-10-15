@@ -425,7 +425,6 @@ GameObject:
   - component: {fileID: 102195201}
   - component: {fileID: 102195203}
   - component: {fileID: 102195202}
-  - component: {fileID: 102195204}
   m_Layer: 0
   m_Name: TilemapField
   m_TagString: Untagged
@@ -2391,18 +2390,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &102195204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102195200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3440076cae189c7468be6137b4ee8ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &124748710
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,7 +3647,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 333192959}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1686226225}
+        m_TargetAssemblyTypeName: PanelLevelUpController, Assembly-CSharp
+        m_MethodName: OnclickCancel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &333192959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6689,7 +6688,7 @@ GameObject:
   - component: {fileID: 790607914}
   - component: {fileID: 790607913}
   m_Layer: 5
-  m_Name: TextButton
+  m_Name: TextName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11440,6 +11439,7 @@ MonoBehaviour:
   - {fileID: 5355833487351453430, guid: 0aeb81f72dcd38b4c9fc38de1ffcc995, type: 3}
   - {fileID: 8115357532549381273, guid: 981e506a5b2e5264fb828ddd2de2200a, type: 3}
   - {fileID: 766215099804870228, guid: a48faee61988f104db29d5cd5aa4bc9e, type: 3}
+  panelLevelUp: {fileID: 1686226225}
 --- !u!4 &1205377887
 Transform:
   m_ObjectHideFlags: 0
@@ -11448,7 +11448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205377885}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11467,7 +11467,7 @@ GameObject:
   - component: {fileID: 1209571006}
   - component: {fileID: 1209571005}
   m_Layer: 5
-  m_Name: TextButton
+  m_Name: TextName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13816,7 +13816,7 @@ GameObject:
   - component: {fileID: 1273239288}
   - component: {fileID: 1273239287}
   m_Layer: 5
-  m_Name: TextButton
+  m_Name: TextName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16982,7 +16982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651997675}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17000,6 +17000,7 @@ GameObject:
   - component: {fileID: 1686226222}
   - component: {fileID: 1686226224}
   - component: {fileID: 1686226223}
+  - component: {fileID: 1686226225}
   m_Layer: 5
   m_Name: PanelLevelUp
   m_TagString: Untagged
@@ -17070,6 +17071,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686226221}
   m_CullTransparentMesh: 1
+--- !u!114 &1686226225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686226221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b629e26a53142d5438317f5cc1b6c77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonLevelUps:
+  - {fileID: 611179733}
+  - {fileID: 17004368}
+  - {fileID: 2084541295}
+  - {fileID: 1229388423}
+  buttonCancel: {fileID: 333192958}
 --- !u!1 &1729007099
 GameObject:
   m_ObjectHideFlags: 0
@@ -21752,7 +21771,7 @@ GameObject:
   - component: {fileID: 2079142396}
   - component: {fileID: 2079142395}
   m_Layer: 5
-  m_Name: TextButton
+  m_Name: TextName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
