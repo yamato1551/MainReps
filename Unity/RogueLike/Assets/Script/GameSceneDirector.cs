@@ -294,4 +294,11 @@ public class GameSceneDirector : MonoBehaviour
             setEnabled(false);
         }
     }
+
+    // •ó” ƒpƒlƒ‹‚ð•\Ž¦
+    public void DispPanelTreasureChest()
+    {
+        // TODO
+
+    }
 }
