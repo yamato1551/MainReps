@@ -66,7 +66,7 @@ public class PanelTreasureChestController : MonoBehaviour
         Utils.SetAlpha(imageClose, 1);
 
         // 開いた宝箱
-        imageClose.gameObject.SetActive(false);
+        imageOpen.gameObject.SetActive(false);
         Utils.SetAlpha(imageOpen, 1);
 
         // ボタンオープン
@@ -75,7 +75,7 @@ public class PanelTreasureChestController : MonoBehaviour
 
         // クローズボタン
         buttonClose.gameObject.SetActive(false);
-        Utils .SetAlpha(buttonClose, 1);
+        Utils.SetAlpha(buttonClose, 1);
 
         // 演出
         Utils.SetAlpha(imageBackFX, 0);
@@ -120,7 +120,6 @@ public class PanelTreasureChestController : MonoBehaviour
             image.DOScale(endScale, duration)
             .SetEase(Ease.OutBounce)
         );
-
         // 再生
         seq.Play().SetUpdate(true).OnComplete(() => dispItem());
     }
