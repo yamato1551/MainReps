@@ -7118,7 +7118,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 124748711}
-  - {fileID: 1454391787}
   m_Father: {fileID: 1434166089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11473,6 +11472,7 @@ MonoBehaviour:
   prefabImagePlayerIcon: {fileID: 3735519555534059143, guid: a14873302f9f8564cae2c42894b7cb6d, type: 3}
   textDefeatedEnemy: {fileID: 434872206}
   DefeatedEnemyCount: 0
+  panelGameOver: {fileID: 1454391790}
 --- !u!4 &1205377887
 Transform:
   m_ObjectHideFlags: 0
@@ -14405,6 +14405,7 @@ RectTransform:
   - {fileID: 1191977851}
   - {fileID: 1686226222}
   - {fileID: 1745585222}
+  - {fileID: 1454391787}
   - {fileID: 998228292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14424,13 +14425,14 @@ GameObject:
   - component: {fileID: 1454391787}
   - component: {fileID: 1454391789}
   - component: {fileID: 1454391788}
+  - component: {fileID: 1454391790}
   m_Layer: 5
   m_Name: PanelGameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1454391787
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14438,15 +14440,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454391786}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1863740495}
   - {fileID: 477574441}
   - {fileID: 533225800}
-  - {fileID: 387048930}
   - {fileID: 932413897}
   - {fileID: 1631974558}
   - {fileID: 1991802228}
@@ -14455,7 +14455,9 @@ RectTransform:
   - {fileID: 1377262505}
   - {fileID: 1790265425}
   - {fileID: 1460034939}
-  m_Father: {fileID: 998228292}
+  - {fileID: 1863740495}
+  - {fileID: 387048930}
+  m_Father: {fileID: 1434166089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -14500,6 +14502,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454391786}
   m_CullTransparentMesh: 1
+--- !u!114 &1454391790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454391786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ababdc62ee260cf44b25afe4d79dd63c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelGameOverBG: {fileID: 998228293}
+  textSurvivedResult: {fileID: 533225801}
+  textLevelResult: {fileID: 932413898}
+  textEnemyResult: {fileID: 1991802229}
+  textWeaponNameTitle: {fileID: 253541945}
+  textWeaponLevelTitle: {fileID: 2103039993}
+  textWeaponDamageTitle: {fileID: 1377262506}
+  textWeaponTimeTitle: {fileID: 1790265426}
+  textWeaponDPSTitle: {fileID: 1460034940}
+  buttonDone: {fileID: 124748712}
 --- !u!1 &1460034938
 GameObject:
   m_ObjectHideFlags: 0
@@ -19550,7 +19574,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863740494}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

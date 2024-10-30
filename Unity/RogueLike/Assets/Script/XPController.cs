@@ -26,6 +26,8 @@ public class XPController : MonoBehaviour
     }
 
     // Update is called once per frame
+    // 30f / 60f.120f.240f
+    // ‚P•bŠÔ‚ÉØ‚è‘Ö‚í‚é”
     void Update()
     {
         // ƒQ[ƒ€’â~’†
