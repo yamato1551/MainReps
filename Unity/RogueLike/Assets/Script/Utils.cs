@@ -1,3 +1,5 @@
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,6 +52,34 @@ public static class Utils
         foreach (var item in button.GetComponentsInChildren<Graphic>())
         {
             SetAlpha(item, alpha);
+        }
+    }
+
+    // タイムスケールを無視したDOFade
+    public static void DOfadeUpdate(Graphic graphic, float endValue, float duration, float delay = 0, Action action = null)
+    {
+        // DoTweenを使ったフェード
+        graphic.DOFade(endValue, duration)
+            // タイムスケール
+            .SetUpdate(true)
+            //　ディレイ
+            .SetDelay(delay)
+            // 終了時に呼び出す関数
+            .OnComplete(() =>
+            {
+                if (null != action) action();
+            });
+    }
+
+    // DOFadeUpdateのボタンバージョン
+    public static void DOfadeUpdate(Button button, float endValue, float duration, float delay = 0, Action action = null)
+    {
+        // ボタン
+        DOfadeUpdate(button.image, endValue, duration, delay, action);
+        // 子オブジェクト
+        foreach(var item in button.GetComponentsInChildren<Graphic>())
+        {
+            DOfadeUpdate(item, endValue, duration, delay, action);
         }
     }
 }

@@ -389,6 +389,7 @@
 "Assets/Script/Settings/ItemSettings.cs"
 "Assets/Script/Settings/WepaponSpawnerSettings.cs"
 "Assets/Script/TextDamageController.cs"
+"Assets/Script/TitleSceneDirector.cs"
 "Assets/Script/TreasureChestController.cs"
 "Assets/Script/Utils.cs"
 "Assets/Script/Weapon/ArrowController.cs"

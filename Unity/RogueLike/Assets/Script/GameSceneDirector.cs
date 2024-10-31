@@ -81,7 +81,7 @@ public class GameSceneDirector : MonoBehaviour
         playerItemIcons = new Dictionary<ItemData, GameObject>();
 
         // ƒvƒŒƒCƒ„[ì¬
-        int playerId = 0;
+        int playerId = TitleSceneDirector.CharacterId;
         Player = CharacterSettings.Instance.CreatePlayer(playerId, this, enemySpawner, textLv, sliderHP, sliderXP);
 
         // ‰Šúİ’è
