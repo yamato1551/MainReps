@@ -19,7 +19,7 @@ MonoBehaviour:
     Name: "\u30B9\u30E9\u30C3\u30B7\u30E5"
     Description: 
     Attack: 15
-    Defence: 0
+    Defense: 0
     HP: -1
     MaxHP: 0
     XP: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     Name: "\u30A2\u30C3\u30AF\u30B9"
     Description: 
     Attack: 30
-    Defence: 0
+    Defense: 0
     HP: -1
     MaxHP: 0
     XP: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
     Name: "\u5F13"
     Description: "\u30E9\u30F3\u30C0\u30E0\u306A\u6575\u306B\u5411\u304B\u3063\u3066\u8CAB\u901A\u3059\u308B\u5F13\u3092\u653E\u3064\n\u8CAB\u901A\u6642\u306F30%\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B"
     Attack: 15
-    Defence: 0
+    Defense: 0
     HP: -1
     MaxHP: 0
     XP: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
     AliveTime: 10
     PrefabSpawner: {fileID: 4592733189244090481, guid: c921156d4d4da784aa47f7ebe26bb78f, type: 3}
     Icon: {fileID: -574902017, guid: fe9d176ce4b73467ab961a542a54e03d, type: 3}
-    LevelUpItemId: 4
+    LevelUpItemId: 2
     SpawnCount: 2
     SpawnTimerMin: 2
     SpawnTimerMax: 3
@@ -79,7 +79,7 @@ MonoBehaviour:
     Name: "\u30CA\u30A4\u30D5"
     Description: "\u9032\u884C\u65B9\u5411\u306B\u30CA\u30A4\u30D5\u3092\u6295\u3052\u308B"
     Attack: 10
-    Defence: 0
+    Defense: 0
     HP: 0
     MaxHP: 0
     XP: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
     Name: "\u30D6\u30FC\u30E1\u30E9\u30F3\u30BD\u30FC\u30C9"
     Description: "\u56DE\u8EE2\u3057\u306A\u304C\u3089\u623B\u3063\u3066\u304F\u308B\u30BD\u30FC\u30C9"
     Attack: 15
-    Defence: 0
+    Defense: 0
     HP: -1
     MaxHP: 0
     XP: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
     Name: "\u30B7\u30FC\u30EB\u30C9"
     Description: "\u6575\u3092\u8DF3\u306D\u8FD4\u3059\u30B7\u30FC\u30EB\u30C9"
     Attack: 5
-    Defence: 0
+    Defense: 0
     HP: 5
     MaxHP: 0
     XP: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
     Name: "\u624B\u88CF\u5263"
     Description: "\u624B\u88CF\u5263\u3092\u6295\u3052\u308B"
     Attack: 15
-    Defence: 0
+    Defense: 0
     HP: 5
     MaxHP: 0
     XP: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
     Name: "\u5186\u6708\u8F2A"
     Description: "\u753B\u9762\u6A4B\u3067\u8DF3\u306D\u8FD4\u308B\u5186\u578B\u306E\u624B\u88CF\u5263"
     Attack: 10
-    Defence: 0
+    Defense: 0
     HP: -1
     MaxHP: 0
     XP: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
     Name: "\u30DC\u30E0"
     Description: "\u7206\u5F3E\u306E\u96E8\u3092\u3075\u3089\u305B\u3066\u5E8A\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B"
     Attack: 50
-    Defence: 0
+    Defense: 0
     HP: -1
     MaxHP: 0
     XP: 0

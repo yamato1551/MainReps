@@ -23,6 +23,8 @@ public class KnifeSpawnerController : BaseWeaponSpawner
         // 武器生成
         KnifeController ctrl = (KnifeController)createWeapon(transform.position, player.Forward);
 
+        SoundController.Instance.PlaySE(7);
+
         // 次の生成タイマー
         spawnTimer = onceSpawnTime;
         onceSpawnCount--;

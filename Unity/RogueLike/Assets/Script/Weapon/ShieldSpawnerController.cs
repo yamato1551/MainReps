@@ -19,6 +19,8 @@ public class ShieldSpawnerController : BaseWeaponSpawner
         {
             ShieldController ctrl = (ShieldController)createWeapon(transform.position, transform);
 
+            SoundController.Instance.PlaySE(6);
+
             // èâä˙äpìx
             ctrl.Angle = 360f / Stats.SpawnCount * i;
         }

@@ -22,6 +22,8 @@ public class ShurikenSpawnerController : BaseWeaponSpawner
 
             // i‚Ş•ûŒü‚ğw’è‚µ‚Ä¶¬
             createWeapon(transform.position, forward.normalized);
+
+            SoundController.Instance.PlaySE(5);
         }
 
         spawnTimer = Stats.GetRandomSpawnTimer();

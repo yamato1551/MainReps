@@ -70,6 +70,9 @@ public class GameSceneDirector : MonoBehaviour
 
     // ゲームオーバー
     [SerializeField] PanelGameOverController panelGameOver;
+
+    // 終了時間
+    [SerializeField] float GameOverTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -155,6 +158,8 @@ public class GameSceneDirector : MonoBehaviour
 
         // TimeScaleリセット
         setEnabled();
+
+        SoundController.Instance.PlayerBGM(0);
     }
 
     // Update is called once per frame
@@ -164,6 +169,10 @@ public class GameSceneDirector : MonoBehaviour
         updateGameTimer();
         // 宝箱生成
         updateTreasureChestSpawner();
+        if (GameOverTime < GameTimer)
+        {
+            DispPanelGameOver();
+        }
     }
 
     // ゲームタイマー

@@ -62,6 +62,10 @@ public class TitleSceneDirector : MonoBehaviour
             });
 
         }
+        // ボタンを選択状態にする
+        buttonStart.Select();
+
+        SoundController.Instance.PlayerBGM(0, true);
     }
 
     // Update is called once per frame
@@ -87,5 +91,10 @@ public class TitleSceneDirector : MonoBehaviour
 
             Utils.DOfadeUpdate(item, 1, 1, 0);
         }
+
+        // ボタンを選択状態にする
+        buttonPlayer[0].Select();
+
+        SoundController.Instance.PlaySE(0);
     }
 }

@@ -21,6 +21,8 @@ public class ArrowSpawnerController : BaseWeaponSpawner
             // 武器生成
             ArrowController ctrl = (ArrowController)createWeapon(transform.position);
 
+            SoundController.Instance.PlaySE(4);
+
             // ランダムでターゲットを決定
             List<EnemyController> enemies = enemySpawner.GetEnemies();
             int rnd = Random.Range(0, enemies.Count);

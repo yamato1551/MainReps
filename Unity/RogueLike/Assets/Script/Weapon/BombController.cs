@@ -63,6 +63,7 @@ public class BombController : BaseWeapon
             animator.SetTrigger("isExplosion");
             rigidbody2d.gravityScale = 0;
             rigidbody2d.velocity = Vector2.zero;
+            SoundController.Instance.PlaySE(2);
         } 
         else if (State.DamegeFloor == next)
         {

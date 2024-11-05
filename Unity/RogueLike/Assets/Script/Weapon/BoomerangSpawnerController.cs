@@ -18,6 +18,7 @@ public class BoomerangSpawnerController : BaseWeaponSpawner
         for (int i = 0; i < Stats.SpawnCount; i++)
         {
             createWeapon(transform.position);
+            SoundController.Instance.PlaySE(9);
         }
         spawnTimer = Stats.GetRandomSpawnTimer();
     }

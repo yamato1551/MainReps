@@ -28,6 +28,8 @@ public class SlashSpawnerController : BaseWeaponSpawner
         // ¶¬
         SlashController ctrl = (SlashController)createWeapon(pos, transform);
 
+        SoundController.Instance.PlaySE(1);
+
         // ¶‰E‚ÅŠp“x‚ğ•Ï‚¦‚é
         ctrl.transform.eulerAngles = ctrl.transform.eulerAngles * dir;
 

@@ -25,6 +25,8 @@ public class AxeSpawnerController : BaseWeaponSpawner
         // ê∂ê¨
         AxeController ctrl = (AxeController)createWeapon(transform.position);
 
+        SoundController.Instance.PlaySE(3);
+
         // éŒÇﬂè„Ç…óÕÇâ¡Ç¶ÇÈ
         ctrl.GetComponent<Rigidbody2D>().AddForce(new Vector2(100 * dir, 350));
 
