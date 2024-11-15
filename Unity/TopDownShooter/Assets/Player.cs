@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Gun data")]
+    [SerializeField] private Transform gunPoint;
+    [SerializeField] private float bulletSpeed;
+    [SerializeField] private GameObject bulletPrefab;
+
     [Header("Movement data")]
     [SerializeField]private float moveSpeed;
     [SerializeField] private float rotationSpeed;
@@ -33,6 +38,10 @@ public class Player : MonoBehaviour
 
     private void CheckInputs()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            shoot();
+        }
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
 
@@ -48,6 +57,14 @@ public class Player : MonoBehaviour
         ApplyMovement();
         ApplyBodyRotaion();
         ApplyTowerRotaion();
+    }
+
+    private void shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, gunPoint.rotation);
+        bullet.GetComponent<Rigidbody>().linearVelocity = gunPoint.forward * bulletSpeed;
+        Destroy(bullet, 7);
+
     }
 
     private void ApplyTowerRotaion()
