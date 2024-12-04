@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
             transform.forward = lookingDirection;
 
             // aimオブジェクトの位置をrayが当たった位置に移動させる
-            aim.position = new Vector3(hitInfo.point.x,transform.position.y, hitInfo.point.z);
+            aim.position = new Vector3(hitInfo.point.x,transform.position.y + 1, hitInfo.point.z);
         }
     }
 
