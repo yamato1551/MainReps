@@ -425,6 +425,7 @@
 -analyzer:"C:/Program Files/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Program Files/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Assets/01_Script/LeftHandTargetTransform.cs"
 "Assets/01_Script/Player.cs"
 "Assets/01_Script/PlayerFollow.cs"
 "Assets/01_Script/PlayerMovement.cs"
