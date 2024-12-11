@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class WeaponVisualController : MonoBehaviour
 {
+    private Animator anim;
+
     [SerializeField] private Transform[] gunTransforms;
 
     [SerializeField] private Transform pistol;
@@ -18,20 +21,36 @@ public class WeaponVisualController : MonoBehaviour
     private void Start()
     {
         SwitchOn(pistol);
+
+        anim = GetComponentInParent<Animator>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
            SwitchOn(pistol);
+            SwitchAnimationLayer(1);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
             SwitchOn(revolver);
+            SwitchAnimationLayer(1);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
             SwitchOn(autoRifile);
+            SwitchAnimationLayer(1);}
         if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
             SwitchOn(shotgun);
+            SwitchAnimationLayer(2);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
             SwitchOn(rifle);
+            SwitchAnimationLayer(3);
+        }
 
     }
 
@@ -71,4 +90,13 @@ public class WeaponVisualController : MonoBehaviour
         leftHand.localRotation = targetTransform.localRotation;
     }
 
+    private void SwitchAnimationLayer(int layerIndex)
+    {
+        for (int i = 1; i < anim.layerCount; i++)
+        {
+            anim.SetLayerWeight(i, 0);
+        }
+
+        anim.SetLayerWeight(layerIndex, 1);
+    }
 }
